@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
@@ -14,7 +13,28 @@ const translations = {
     moreServices: "Ja Monia Muita Palveluita! Poislukien autojen maalaukset, kysy lisää!",
     payment: "Maksuvaihtoehtoina ovat Pankki- ja luottokortit sekä Klarna Lasku",
     hourlyRate: "Tuntiveloituksemme on vain 59€/h , pakettiautot 69€/h",
-    contact: "Yhteystiedot"
+    contact: "Yhteystiedot",
+    services: {
+      maintenance: [
+        "Vuosihuollot alk. 120€",
+        "Öljynvaihdot alk. 59€",
+        "Määräaikaishuollot"
+      ],
+      inspection: [
+        "Katsastuspalvelu alk.80€",
+        "OBD ja Päästömittaukset 20€",
+        "Vikadiagnoosit"
+      ],
+      cleaning: [
+        "Rengastyöt",
+        "Ilmastointihuollot alkaen 49€",
+        "Sisustapesut ja Otsonointi"
+      ],
+      other: [
+        "Avainten Kopionti",
+        "Ruostekorjaukset"
+      ]
+    }
   },
   en: {
     title: "Welcome to Autoparsinta Car Service!",
@@ -26,19 +46,61 @@ const translations = {
     moreServices: "And Many Other Services! Excluding car painting, ask for more!",
     payment: "Payment options include Bank and credit cards and Klarna Invoice",
     hourlyRate: "Our hourly rate is only 59€/h, vans 69€/h",
-    contact: "Contact Information"
+    contact: "Contact Information",
+    services: {
+      maintenance: [
+        "Annual maintenance from 120€",
+        "Oil changes from 59€",
+        "Regular maintenance"
+      ],
+      inspection: [
+        "Inspection service from 80€",
+        "OBD and Emission tests 20€",
+        "Fault diagnostics"
+      ],
+      cleaning: [
+        "Tire services",
+        "AC maintenance from 49€",
+        "Interior cleaning and Ozonation"
+      ],
+      other: [
+        "Key copying",
+        "Rust repairs"
+      ]
+    }
   },
   ar: {
     title: "!مرحباً بكم في ورشة أوتوبارسينتا للسيارات",
     principle: "مبدأنا هو تقديم خدمات الصيانة والإصلاح بأسعار معقولة قدر الإمكان. يمكنك الوصول إلينا عبر واتساب أو بالاتصال",
     openingTitle: ":ساعات العمل",
-    openingHours: "الإثنين-الخميس ٨:٣٠ - ١٦:٠٠",
+    openingHours: "الإثنين-الخميس ٨:٣٠ - ١٥:٠٠",
     friday: "الجمعة ٨:٣٠ - ١٢:٣٠",
     servicesTitle: "خدماتنا تشمل",
     moreServices: "!والعديد من الخدمات الأخرى! باستثناء طلاء السيارات، اسأل للمزيد",
     payment: "خيارات الدفع تشمل البطاقات المصرفية والائتمانية وفاتورة كلارنا",
     hourlyRate: "سعرنا بالساعة ٥٩ يورو فقط، الشاحنات ٦٩ يورو",
-    contact: "معلومات الاتصال"
+    contact: "معلومات الاتصال",
+    services: {
+      maintenance: [
+        "الصيانة السنوية من ١٢٠ يورو",
+        "تغيير الزيت من ٥٩ يورو",
+        "الصيانة الدورية"
+      ],
+      inspection: [
+        "خدمة الفحص من ٨٠ يورو",
+        "فحص OBD وانبعاثات ٢٠ يورو",
+        "تشخيص الأعطال"
+      ],
+      cleaning: [
+        "خدمات الإطارات",
+        "صيانة التكييف من ٤٩ يورو",
+        "تنظيف داخلي وتعقيم بالأوزون"
+      ],
+      other: [
+        "نسخ المفاتيح",
+        "إصلاح الصدأ"
+      ]
+    }
   },
   sv: {
     title: "Välkommen till Autoparsinta Bilservice!",
@@ -50,7 +112,28 @@ const translations = {
     moreServices: "Och många andra tjänster! Exklusive billackering, fråga mer!",
     payment: "Betalningsalternativ inkluderar Bank- och kreditkort samt Klarna Faktura",
     hourlyRate: "Vårt timpris är endast 59€/h, skåpbilar 69€/h",
-    contact: "Kontaktinformation"
+    contact: "Kontaktinformation",
+    services: {
+      maintenance: [
+        "Årsservice från 120€",
+        "Oljebyte från 59€",
+        "Regelbundet underhåll"
+      ],
+      inspection: [
+        "Besiktningstjänst från 80€",
+        "OBD och utsläppstester 20€",
+        "Feldiagnostik"
+      ],
+      cleaning: [
+        "Däckservice",
+        "AC-service från 49€",
+        "Invändig rengöring och ozonbehandling"
+      ],
+      other: [
+        "Nyckelkopiering",
+        "Rostlagning"
+      ]
+    }
   }
 };
 
@@ -66,7 +149,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-garage-900 text-white">
-      {/* Language Switcher */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2 flex justify-end gap-2">
           <button
@@ -96,7 +178,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
       <div 
         className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center"
       >
@@ -123,7 +204,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Services Section */}
       <section className="py-20 bg-gradient-to-b from-garage-900 to-garage-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -132,34 +212,43 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ServiceCard
               icon={<Car className="w-8 h-8" />}
-              items={[
-                "Vuosihuollot alk. 120€",
-                "Öljynvaihdot alk. 59€",
-                "Määräaikaishuollot"
-              ]}
+              items={t.services.maintenance}
+              className="transform transition-all duration-500 hover:scale-105"
+              style={{
+                transform: `translateY(${isVisible ? '0' : '20px'})`,
+                opacity: isVisible ? 1 : 0,
+                transitionDelay: '100ms'
+              }}
             />
             <ServiceCard
               icon={<Wrench className="w-8 h-8" />}
-              items={[
-                "Katsastuspalvelu alk.80€",
-                "OBD ja Päästömittaukset 20€",
-                "Vikadiagnoosit"
-              ]}
+              items={t.services.inspection}
+              className="transform transition-all duration-500 hover:scale-105"
+              style={{
+                transform: `translateY(${isVisible ? '0' : '20px'})`,
+                opacity: isVisible ? 1 : 0,
+                transitionDelay: '200ms'
+              }}
             />
             <ServiceCard
               icon={<PaintBucket className="w-8 h-8" />}
-              items={[
-                "Rengastyöt",
-                "Ilmastointihuollot alkaen 49€",
-                "Sisustapesut ja Otsonointi"
-              ]}
+              items={t.services.cleaning}
+              className="transform transition-all duration-500 hover:scale-105"
+              style={{
+                transform: `translateY(${isVisible ? '0' : '20px'})`,
+                opacity: isVisible ? 1 : 0,
+                transitionDelay: '300ms'
+              }}
             />
             <ServiceCard
               icon={<Key className="w-8 h-8" />}
-              items={[
-                "Avainten Kopionti",
-                "Ruostekorjaukset"
-              ]}
+              items={t.services.other}
+              className="transform transition-all duration-500 hover:scale-105"
+              style={{
+                transform: `translateY(${isVisible ? '0' : '20px'})`,
+                opacity: isVisible ? 1 : 0,
+                transitionDelay: '400ms'
+              }}
             />
           </div>
 
@@ -176,7 +265,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="py-20 bg-garage-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -225,8 +313,16 @@ const Index = () => {
   );
 };
 
-const ServiceCard = ({ icon, items }: { icon: React.ReactNode; items: string[] }) => (
-  <Card className="p-6 bg-white/5 backdrop-blur-sm border-0 hover:bg-white/10 transition-all duration-300">
+const ServiceCard = ({ icon, items, className, style }: { 
+  icon: React.ReactNode; 
+  items: string[];
+  className?: string;
+  style?: React.CSSProperties;
+}) => (
+  <Card 
+    className={`p-6 bg-white/5 backdrop-blur-sm border-0 hover:bg-white/10 transition-all duration-300 ${className}`}
+    style={style}
+  >
     <div className="flex flex-col items-center">
       <div className="mb-4 text-garage-200">
         {icon}
