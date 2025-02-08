@@ -138,8 +138,8 @@ const Index = () => {
                   />
                   <ContactItem
                     icon={<Phone className="w-6 h-6" />}
-                    text="045 886 3211"
-                    link="tel:0458863211"
+                    text="+35845 886 3211"
+                    link="tel:+385458863211"
                   />
                   <ContactItem
                     icon={<MessageSquare className="w-6 h-6" />}
