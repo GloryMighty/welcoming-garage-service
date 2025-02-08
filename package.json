@@ -9,6 +9,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "serve": "vite preview --port 3000",
+    "local:build": "vite build --mode local",
     "vercel-build": "npm run build"
   },
   "dependencies": {

@@ -297,7 +297,7 @@ const Index = () => {
                   />
                 </div>
               </div>
-              <div className="h-[300px] bg-garage-700 rounded-lg">
+              <div className="h-[300px] w-[500px] bg-garage-700 rounded-lg">
                 <div className="w-full h-full rounded-lg overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.2877164865386!2d22.715777684016927!3d63.67416407937154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4683eb0818f22631%3A0x7806fb8e92a753cb!2sAutoparsinta!5e0!3m2!1sen!2sfi!4v1710871500997!5m2!1sen!2sfi"

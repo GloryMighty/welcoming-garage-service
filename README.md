@@ -50,6 +50,45 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## Local Development
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Setup Steps
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start local development server:
+   ```bash
+   npm run dev
+   ```
+   - Default port: 8080
+   - Auto-opens in browser if configured
+
+4. Build for local testing:
+   ```bash
+   npm run local:build
+   ```
+
+5. Serve local build:
+   ```bash
+   npm run serve
+   ```
+
+### Environment Configuration
+- `.env` file controls local development settings
+- Modify environment variables as needed
+
+### Troubleshooting
+- Ensure all dependencies are installed
+- Check console for any startup errors
+- Verify Node.js and npm versions
+
 ## What technologies are used for this project?
 
 This project is built with .
