@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
 
-
 const translations = {
   fi: {
     copyright: "© 2025 MZ Autoparsinta Oy, kaikki oikeudet pidätetään",
@@ -184,10 +183,30 @@ const Index = () => {
       </div>
 
       <div 
-        className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center"
+        className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center rounded-b-[50px]"
+        style={{
+          backgroundAttachment: 'fixed',
+          perspective: '1px'
+        }}
       >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm">
-          <div className="container mx-auto px-4 pt-20">
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-b-[50px] overflow-hidden">
+          {/* Animated Background Effects */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Oil Drop Effects */}
+            {[...Array(15)].map((_, i) => (
+              <div 
+                key={`oil-drop-${i}`}
+                className="absolute bg-gray-700 rounded-full w-2 h-2 animate-oil-drop"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="container mx-auto px-4 pt-20 relative z-10">
             <div className={`max-w-3xl mx-auto text-center space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 {t.title}
@@ -306,6 +325,7 @@ const Index = () => {
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
+                    title="Autoparsinta"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
