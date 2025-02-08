@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-garage-900 text-white">
       {/* Hero Section */}
       <div 
-        className="relative h-screen bg-[url('https://images.unsplash.com/photo-1487958449943-2429e8be8625')] bg-cover bg-center"
+        className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center"
       >
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm">
           <div className="container mx-auto px-4 pt-20">
