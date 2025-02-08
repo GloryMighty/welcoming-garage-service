@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Ke
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [language, setLanguage] = useState('fi');
 
   useEffect(() => {
     setIsVisible(true);
@@ -12,6 +13,36 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-garage-900 text-white">
+      {/* Language Switcher */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-2 flex justify-end gap-2">
+          <button
+            onClick={() => setLanguage('fi')}
+            className={`px-3 py-1 rounded ${language === 'fi' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+          >
+            Suomi
+          </button>
+          <button
+            onClick={() => setLanguage('en')}
+            className={`px-3 py-1 rounded ${language === 'en' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+          >
+            English
+          </button>
+          <button
+            onClick={() => setLanguage('ar')}
+            className={`px-3 py-1 rounded ${language === 'ar' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+          >
+            العربية
+          </button>
+          <button
+            onClick={() => setLanguage('sv')}
+            className={`px-3 py-1 rounded ${language === 'sv' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+          >
+            Svenska
+          </button>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <div 
         className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center"
@@ -122,10 +153,9 @@ const Index = () => {
                 </div>
               </div>
               <div className="h-[300px] bg-garage-700 rounded-lg">
-                {/* Map placeholder - replace with actual map implementation */}
                 <div className="w-full h-full rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.3370840979898!2d22.6945833!3d63.6745833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46857c41c5555555%3A0x0!2zNjPCsDQwJzI4LjUiTiAyMsKwNDEnNDAuNSJF!5e0!3m2!1sen!2sfi!4v1650000000000!5m2!1sen!2sfi"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.3370840979898!2d22.694583!3d63.674583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46857c419d9ea3fd%3A0xdf5ec5720816ed33!2sFabriksgatan%2013%2C%2068600%20Jakobstad!5e0!3m2!1sen!2sfi!4v1710870793047!5m2!1sen!2sfi"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
