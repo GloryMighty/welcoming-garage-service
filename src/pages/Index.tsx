@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Phone, Mail, MapPin, WhatsApp, Clock, Car, Tool, Spray, Key } from "lucide-react";
+import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +56,7 @@ const Index = () => {
               ]}
             />
             <ServiceCard
-              icon={<Tool className="w-8 h-8" />}
+              icon={<Wrench className="w-8 h-8" />}
               items={[
                 "Katsastuspalvelu alk.80€",
                 "OBD ja Päästömittaukset 20€",
@@ -64,7 +64,7 @@ const Index = () => {
               ]}
             />
             <ServiceCard
-              icon={<Spray className="w-8 h-8" />}
+              icon={<PaintBucket className="w-8 h-8" />}
               items={[
                 "Rengastyöt",
                 "Ilmastointihuollot alkaen 49€",
@@ -111,7 +111,7 @@ const Index = () => {
                     link="tel:0458863211"
                   />
                   <ContactItem
-                    icon={<WhatsApp className="w-6 h-6" />}
+                    icon={<MessageSquare className="w-6 h-6" />}
                     text="WhatsApp"
                     link="https://wa.me/358458863211"
                   />
