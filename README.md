@@ -67,3 +67,27 @@ Simply open [Lovable](https://lovable.dev/projects/fa12cbca-fa20-4506-baea-7c27c
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## Vercel Deployment
+
+### Prerequisites
+- A Vercel account
+- Git repository with the project
+- Node.js and npm installed
+
+### Deployment Steps
+1. Connect your GitHub repository to Vercel
+2. Vercel will automatically detect the project structure
+3. Select the following settings:
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+
+### Environment Variables
+No specific environment variables are required for this project.
+
+### Troubleshooting
+- Ensure all dependencies are correctly listed in `package.json`
+- Check that the build script is configured correctly
+- Verify that the `vercel.json` configuration is compatible with your project structure
