@@ -3,6 +3,57 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
 
+const translations = {
+  fi: {
+    title: "Tervetuloa Autokorjaamo Autoparsinnan Sivustolle!",
+    principle: "Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. Tavoitat meidät joko Whatsapp viestillä tai soittamalla.",
+    openingTitle: "Korjaamomme on auki:",
+    openingHours: "Ma-To 8:30 - 16:00",
+    friday: "Perjantaisin 8:30 - 12:30",
+    servicesTitle: "Palveluihimme sisältyy",
+    moreServices: "Ja Monia Muita Palveluita! Poislukien autojen maalaukset, kysy lisää!",
+    payment: "Maksuvaihtoehtoina ovat Pankki- ja luottokortit sekä Klarna Lasku",
+    hourlyRate: "Tuntiveloituksemme on vain 59€/h , pakettiautot 69€/h",
+    contact: "Yhteystiedot"
+  },
+  en: {
+    title: "Welcome to Autoparsinta Car Service!",
+    principle: "Our principle is to offer maintenance and repair services at the most affordable prices possible. You can reach us either via WhatsApp or by calling.",
+    openingTitle: "Our workshop is open:",
+    openingHours: "Mon-Thu 8:30 - 16:00",
+    friday: "Fridays 8:30 - 12:30",
+    servicesTitle: "Our Services Include",
+    moreServices: "And Many Other Services! Excluding car painting, ask for more!",
+    payment: "Payment options include Bank and credit cards and Klarna Invoice",
+    hourlyRate: "Our hourly rate is only 59€/h, vans 69€/h",
+    contact: "Contact Information"
+  },
+  ar: {
+    title: "!مرحباً بكم في ورشة أوتوبارسينتا للسيارات",
+    principle: "مبدأنا هو تقديم خدمات الصيانة والإصلاح بأسعار معقولة قدر الإمكان. يمكنك الوصول إلينا عبر واتساب أو بالاتصال",
+    openingTitle: ":ساعات العمل",
+    openingHours: "الإثنين-الخميس ٨:٣٠ - ١٦:٠٠",
+    friday: "الجمعة ٨:٣٠ - ١٢:٣٠",
+    servicesTitle: "خدماتنا تشمل",
+    moreServices: "!والعديد من الخدمات الأخرى! باستثناء طلاء السيارات، اسأل للمزيد",
+    payment: "خيارات الدفع تشمل البطاقات المصرفية والائتمانية وفاتورة كلارنا",
+    hourlyRate: "سعرنا بالساعة ٥٩ يورو فقط، الشاحنات ٦٩ يورو",
+    contact: "معلومات الاتصال"
+  },
+  sv: {
+    title: "Välkommen till Autoparsinta Bilservice!",
+    principle: "Vår princip är att erbjuda underhålls- och reparationstjänster till mest förmånliga priser. Du når oss antingen via WhatsApp eller genom att ringa.",
+    openingTitle: "Vår verkstad är öppen:",
+    openingHours: "Mån-Tors 8:30 - 16:00",
+    friday: "Fredagar 8:30 - 12:30",
+    servicesTitle: "Våra tjänster inkluderar",
+    moreServices: "Och många andra tjänster! Exklusive billackering, fråga mer!",
+    payment: "Betalningsalternativ inkluderar Bank- och kreditkort samt Klarna Faktura",
+    hourlyRate: "Vårt timpris är endast 59€/h, skåpbilar 69€/h",
+    contact: "Kontaktinformation"
+  }
+};
+
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [language, setLanguage] = useState('fi');
@@ -10,6 +61,8 @@ const Index = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const t = translations[language];
 
   return (
     <div className="min-h-screen bg-garage-900 text-white">
@@ -51,19 +104,18 @@ const Index = () => {
           <div className="container mx-auto px-4 pt-20">
             <div className={`max-w-3xl mx-auto text-center space-y-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Tervetuloa Autokorjaamo Autoparsinnan Sivustolle!
+                {t.title}
               </h1>
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-                Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. 
-                Tavoitat meidät joko Whatsapp viestillä tai soittamalla.
+                {t.principle}
               </p>
               <div className="mt-8 p-4 bg-white/10 backdrop-blur-md rounded-lg inline-block">
                 <p className="text-lg">
-                  Korjaamomme on auki:
+                  {t.openingTitle}
                   <br />
-                  Ma-To 8:30 - 16:00
+                  {t.openingHours}
                   <br />
-                  Perjantaisin 8:30 - 12:30
+                  {t.friday}
                 </p>
               </div>
             </div>
@@ -75,7 +127,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-b from-garage-900 to-garage-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Palveluihimme sisältyy
+            {t.servicesTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ServiceCard
@@ -113,12 +165,12 @@ const Index = () => {
 
           <div className="mt-12 text-center">
             <p className="text-xl text-gray-300">
-              Ja Monia Muita Palveluita! Poislukien autojen maalaukset, kysy lisää!
+              {t.moreServices}
             </p>
             <p className="mt-4 text-gray-300">
-              Maksuvaihtoehtoina ovat Pankki- ja luottokortit sekä Klarna Lasku
+              {t.payment}
               <br />
-              Tuntiveloituksemme on vain 59€/h , pakettiautot 69€/h
+              {t.hourlyRate}
             </p>
           </div>
         </div>
@@ -130,7 +182,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold mb-6">Yhteystiedot</h3>
+                <h3 className="text-2xl font-bold mb-6">{t.contact}</h3>
                 <div className="space-y-4">
                   <ContactItem
                     icon={<MapPin className="w-6 h-6" />}
@@ -139,7 +191,7 @@ const Index = () => {
                   <ContactItem
                     icon={<Phone className="w-6 h-6" />}
                     text="+35845 886 3211"
-                    link="tel:+385458863211"
+                    link="tel:+358458863211"
                   />
                   <ContactItem
                     icon={<MessageSquare className="w-6 h-6" />}
@@ -155,7 +207,7 @@ const Index = () => {
               <div className="h-[300px] bg-garage-700 rounded-lg">
                 <div className="w-full h-full rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.3370840979898!2d22.694583!3d63.674583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46857c419d9ea3fd%3A0xdf5ec5720816ed33!2sFabriksgatan%2013%2C%2068600%20Jakobstad!5e0!3m2!1sen!2sfi!4v1710870793047!5m2!1sen!2sfi"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1807.2877164865386!2d22.715777684016927!3d63.67416407937154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4683eb0818f22631%3A0x7806fb8e92a753cb!2sAutoparsinta!5e0!3m2!1sen!2sfi!4v1710871500997!5m2!1sen!2sfi"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
