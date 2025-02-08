@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
 
+
 const translations = {
   fi: {
+    copyright: "© 2025 MZ Autoparsinta Oy, kaikki oikeudet pidätetään",
     title: "Tervetuloa Autokorjaamo Autoparsinnan Sivustolle!",
     principle: "Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. Tavoitat meidät joko Whatsapp viestillä tai soittamalla.",
     openingTitle: "Korjaamomme on auki:",
@@ -37,6 +39,7 @@ const translations = {
     }
   },
   en: {
+    copyright: "© 2025 MZ Autoparsinta Oy, all rights reserved",
     title: "Welcome to Autoparsinta Car Service!",
     principle: "Our principle is to offer maintenance and repair services at the most affordable prices possible. You can reach us either via WhatsApp or by calling.",
     openingTitle: "Our workshop is open:",
@@ -70,6 +73,7 @@ const translations = {
     }
   },
   ar: {
+    copyright: "© ٢٠٢٥ شركة إم زد أوتوبارسينتا، جميع الحقوق محفوظة",
     title: "!مرحباً بكم في ورشة أوتوبارسينتا للسيارات",
     principle: "مبدأنا هو تقديم خدمات الصيانة والإصلاح بأسعار معقولة قدر الإمكان. يمكنك الوصول إلينا عبر واتساب أو بالاتصال",
     openingTitle: ":ساعات العمل",
@@ -103,6 +107,7 @@ const translations = {
     }
   },
   sv: {
+    copyright: "© 2025 MZ Autoparsinta Oy, alla rättigheter förbehållna",
     title: "Välkommen till Autoparsinta Bilservice!",
     principle: "Vår princip är att erbjuda underhålls- och reparationstjänster till mest förmånliga priser. Du når oss antingen via WhatsApp eller genom att ringa.",
     openingTitle: "Vår verkstad är öppen:",
@@ -309,6 +314,20 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <footer className="py-8 bg-garage-900">
+        <div 
+          className="container mx-auto px-4 text-center text-gray-400"
+          style={{
+            transform: `translateY(${isVisible ? '0' : '20px'})`,
+            opacity: isVisible ? 1 : 0,
+            transition: 'all 0.5s ease-out',
+            transitionDelay: '200ms'
+          }}
+        >
+          <p>{t.copyright}</p>
+        </div>
+      </footer>
     </div>
   );
 };
