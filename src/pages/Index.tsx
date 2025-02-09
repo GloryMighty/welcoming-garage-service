@@ -154,8 +154,8 @@ const Index = () => {
   return (
     <div className="min-h-screen min-w-screen bg-garage-900 text-white">
       <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
-        <div className="container mx-auto px-2 sm:px-4 py-1 sm:py-2">
-          <div className="flex justify-center space-x-1 sm:space-x-2">
+        <div className="w-full max-w-[100vw] px-2 sm:px-4 py-1 sm:py-2">
+          <div className="flex justify-center space-x-1 sm:space-x-2 w-full">
             <button
               onClick={() => setLanguage('fi')}
               className={`flex-1 min-w-0 px-2 py-1 text-xs sm:text-sm rounded overflow-hidden whitespace-nowrap ${language === 'fi' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
