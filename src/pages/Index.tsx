@@ -154,28 +154,28 @@ const Index = () => {
   return (
     <div className="min-h-screen min-w-screen bg-garage-900 text-white">
       <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-2 flex justify-center gap-2">
+        <div className="container mx-auto px-4 py-2 flex flex-wrap justify-center items-center gap-2 sm:gap-4 w-full max-w-md">
           <button
             onClick={() => setLanguage('fi')}
-            className={`px-3 py-1 rounded ${language === 'fi' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+            className={`flex-grow min-w-[60px] px-2 py-1 text-sm sm:text-base rounded ${language === 'fi' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
           >
             Suomi
           </button>
           <button
             onClick={() => setLanguage('en')}
-            className={`px-3 py-1 rounded ${language === 'en' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+            className={`flex-grow min-w-[60px] px-2 py-1 text-sm sm:text-base rounded ${language === 'en' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
           >
             English
           </button>
           <button
             onClick={() => setLanguage('ar')}
-            className={`px-3 py-1 rounded ${language === 'ar' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+            className={`flex-grow min-w-[60px] px-2 py-1 text-sm sm:text-base rounded ${language === 'ar' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
           >
             العربية
           </button>
           <button
             onClick={() => setLanguage('sv')}
-            className={`px-3 py-1 rounded ${language === 'sv' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
+            className={`flex-grow min-w-[60px] px-2 py-1 text-sm sm:text-base rounded ${language === 'sv' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
           >
             Svenska
           </button>
