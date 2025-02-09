@@ -152,7 +152,7 @@ const Index = () => {
   const t = translations[language];
 
   return (
-    <div className="min-h-screen bg-garage-900 text-white">
+    <div className="min-h-screen min-w-screen bg-garage-900 text-white">
       <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2 flex justify-center gap-2">
           <button
