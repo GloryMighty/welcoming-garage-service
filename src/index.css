@@ -8,6 +8,13 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Force black background when scrolled far */
+  body.scrolled-far {
+    background-color: black !important;
+    color: white !important;
   }
   ::-webkit-scrollbar {
     @apply w-2;
@@ -43,4 +50,9 @@
     transform: translateY(100vh);
     opacity: 0;
   }
+}
+
+/* Ensure no conflicts with Tailwind's background classes */
+.bg-black {
+  background-color: black !important;
 }

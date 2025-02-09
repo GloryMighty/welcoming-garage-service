@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Ke
 
 const translations = {
   fi: {
-    copyright: "© 2025 MZ Autoparsinta Oy, kaikki oikeudet pidätetään",
+    copyright: " 2025 MZ Autoparsinta Oy, kaikki oikeudet pidätetään",
     title: "Tervetuloa Autokorjaamo Autoparsinnan Sivustolle!",
     principle: "Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. Tavoitat meidät joko Whatsapp viestillä tai soittamalla.",
     openingTitle: "Korjaamomme on auki:",
@@ -38,7 +38,7 @@ const translations = {
     }
   },
   en: {
-    copyright: "© 2025 MZ Autoparsinta Oy, all rights reserved",
+    copyright: " 2025 MZ Autoparsinta Oy, all rights reserved",
     title: "Welcome to Autoparsinta Car Service!",
     principle: "Our principle is to offer maintenance and repair services at the most affordable prices possible. You can reach us either via WhatsApp or by calling.",
     openingTitle: "Our workshop is open:",
@@ -72,7 +72,7 @@ const translations = {
     }
   },
   ar: {
-    copyright: "© ٢٠٢٥ شركة إم زد أوتوبارسينتا، جميع الحقوق محفوظة",
+    copyright: " ٢٠٢٥ شركة إم زد أوتوبارسينتا، جميع الحقوق محفوظة",
     title: "!مرحباً بكم في ورشة أوتوبارسينتا للسيارات",
     principle: "مبدأنا هو تقديم خدمات الصيانة والإصلاح بأسعار معقولة قدر الإمكان. يمكنك الوصول إلينا عبر واتساب أو بالاتصال",
     openingTitle: ":ساعات العمل",
@@ -106,7 +106,7 @@ const translations = {
     }
   },
   sv: {
-    copyright: "© 2025 MZ Autoparsinta Oy, alla rättigheter förbehållna",
+    copyright: " 2025 MZ Autoparsinta Oy, alla rättigheter förbehållna",
     title: "Välkommen till Autoparsinta Bilservice!",
     principle: "Vår princip är att erbjuda underhålls- och reparationstjänster till mest förmånliga priser. Du når oss antingen via WhatsApp eller genom att ringa.",
     openingTitle: "Vår verkstad är öppen:",
@@ -154,7 +154,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-garage-900 text-white">
       <div className="fixed top-0 left-0 right-0 z-50 bg-garage-900/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-2 flex justify-end gap-2">
+        <div className="container mx-auto px-4 py-2 flex justify-center gap-2">
           <button
             onClick={() => setLanguage('fi')}
             className={`px-3 py-1 rounded ${language === 'fi' ? 'bg-white text-garage-900' : 'bg-garage-800 text-white'}`}
