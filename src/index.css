@@ -5,7 +5,17 @@
 @layer base {
   * {
     @apply border-border;
+    max-width: 100%;
+    overflow-x: hidden;
   }
+  
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
   body {
     @apply bg-background text-foreground antialiased;
     transition: background-color 0.3s ease;
@@ -16,6 +26,13 @@
     background-color: black !important;
     color: white !important;
   }
+  
+  /* Prevent horizontal scrolling for all content */
+  #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
   ::-webkit-scrollbar {
     @apply w-2;
   }
