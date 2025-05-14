@@ -1,28 +1,28 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, PaintBucket, Key } from "lucide-react";
+import { Phone, Mail, MapPin, MessageSquare, Clock, Car, Wrench, CircleStop, Key } from "lucide-react";
 
 const translations = {
   fi: {
     copyright: " 2025 MZ Autoparsinta Oy, kaikki oikeudet pidätetään",
     title: "Tervetuloa Autokorjaamo Autoparsinnan Sivustolle!",
-    principle: "Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. Tavoitat meidät joko Whatsapp viestillä tai soittamalla.",
+    principle: "Periaatteemme on tarjota huolto- ja korjauspalveluita mahdollisimman edullisesti. Tavoitat meidät joko Whatsapp viestillä tai soittamalla:",
     openingTitle: "Korjaamomme on auki:",
     openingHours: "Ma-To 8:30 - 16:00",
     friday: "Perjantaisin 8:30 - 12:30",
     servicesTitle: "Palveluihimme sisältyy",
     moreServices: "Ja Monia Muita Palveluita! Poislukien autojen maalaukset, kysy lisää!",
     payment: "Maksuvaihtoehtoina ovat Pankki- ja luottokortit sekä Klarna Lasku",
-    hourlyRate: "Tuntiveloituksemme on vain 59€/h , pakettiautot 69€/h",
+    hourlyRate: "Tuntiveloituksemme on vain 69€/h , pakettiautot 79€/h",
     contact: "Yhteystiedot",
     services: {
       maintenance: [
         "Vuosihuollot alk. 120€",
-        "Öljynvaihdot alk. 59€",
+        "Öljynvaihdot alk. 55€",
         "Määräaikaishuollot"
       ],
       inspection: [
-        "Katsastuspalvelu alk.80€",
+        "Katsastuspalvelu alk.85€",
         "OBD ja Päästömittaukset 20€",
         "Vikadiagnoosit"
       ],
@@ -33,30 +33,31 @@ const translations = {
       ],
       other: [
         "Avainten Kopionti",
-        "Ruostekorjaukset"
+        "Ruostekorjaukset",
+        "Vetokoukkujen Asennukset"
       ]
     }
   },
   en: {
     copyright: " 2025 MZ Autoparsinta Oy, all rights reserved",
     title: "Welcome to Autoparsinta Car Service!",
-    principle: "Our principle is to offer maintenance and repair services at the most affordable prices possible. You can reach us either via WhatsApp or by calling.",
+    principle: "Our principle is to offer maintenance and repair services at the most affordable prices possible. You can reach us either via WhatsApp or by calling:",
     openingTitle: "Our workshop is open:",
     openingHours: "Mon-Thu 8:30 - 16:00",
     friday: "Fridays 8:30 - 12:30",
     servicesTitle: "Our Services Include",
     moreServices: "And Many Other Services! Excluding car painting, ask for more!",
     payment: "Payment options include Bank and credit cards and Klarna Invoice",
-    hourlyRate: "Our hourly rate is only 59€/h, vans 69€/h",
+    hourlyRate: "Our hourly rate is only 69€/h, vans 79€/h",
     contact: "Contact Information",
     services: {
       maintenance: [
         "Annual maintenance from 120€",
-        "Oil changes from 59€",
+        "Oil changes from 55€",
         "Regular maintenance"
       ],
       inspection: [
-        "Inspection service from 80€",
+        "Inspection service from 85€",
         "OBD and Emission tests 20€",
         "Fault diagnostics"
       ],
@@ -67,7 +68,8 @@ const translations = {
       ],
       other: [
         "Key copying",
-        "Rust repairs"
+        "Rust repairs",
+        "Towbar installations"
       ]
     }
   },
@@ -81,16 +83,16 @@ const translations = {
     servicesTitle: "خدماتنا تشمل",
     moreServices: "!والعديد من الخدمات الأخرى! باستثناء طلاء السيارات، اسأل للمزيد",
     payment: "خيارات الدفع تشمل البطاقات المصرفية والائتمانية وفاتورة كلارنا",
-    hourlyRate: "سعرنا بالساعة ٥٩ يورو فقط، الشاحنات ٦٩ يورو",
+    hourlyRate: "سعرنا بالساعة ٦٩ يورو فقط، الشاحنات ٧٩ يورو",
     contact: "معلومات الاتصال",
     services: {
       maintenance: [
         "الصيانة السنوية من ١٢٠ يورو",
-        "تغيير الزيت من ٥٩ يورو",
+        "تغيير الزيت من ٥٥ يورو",
         "الصيانة الدورية"
       ],
       inspection: [
-        "خدمة الفحص من ٨٠ يورو",
+        "خدمة الفحص من ٨٥ يورو",
         "فحص OBD وانبعاثات ٢٠ يورو",
         "تشخيص الأعطال"
       ],
@@ -101,41 +103,43 @@ const translations = {
       ],
       other: [
         "نسخ المفاتيح",
-        "إصلاح الصدأ"
+        "إصلاح الصدأ",
+        "تركيب شنكل"
       ]
     }
   },
   sv: {
     copyright: " 2025 MZ Autoparsinta Oy, alla rättigheter förbehållna",
     title: "Välkommen till Autoparsinta Bilservice!",
-    principle: "Vår princip är att erbjuda underhålls- och reparationstjänster till mest förmånliga priser. Du når oss antingen via WhatsApp eller genom att ringa.",
+    principle: "Vår princip är att erbjuda underhålls- och reparationstjänster till mest förmånliga priser. Du når oss antingen via WhatsApp eller genom att ringa:",
     openingTitle: "Vår verkstad är öppen:",
     openingHours: "Mån-Tors 8:30 - 16:00",
     friday: "Fredagar 8:30 - 12:30",
     servicesTitle: "Våra tjänster inkluderar",
-    moreServices: "Och många andra tjänster! Exklusive billackering, fråga mer!",
+    moreServices: "Och många andra tjänster! Exklusive bilmåleri, fråga mer!",
     payment: "Betalningsalternativ inkluderar Bank- och kreditkort samt Klarna Faktura",
-    hourlyRate: "Vårt timpris är endast 59€/h, skåpbilar 69€/h",
+    hourlyRate: "Vårt timpris är endast 69€/h, paketbilar 79€/h",
     contact: "Kontaktinformation",
     services: {
       maintenance: [
         "Årsservice från 120€",
-        "Oljebyte från 59€",
+        "Oljebyte från 55€",
         "Regelbundet underhåll"
       ],
       inspection: [
-        "Besiktningstjänst från 80€",
-        "OBD och utsläppstester 20€",
+        "Besiktningstjänst från 85€",
+        "OBD och avgastester 20€",
         "Feldiagnostik"
       ],
       cleaning: [
         "Däckservice",
         "AC-service från 49€",
-        "Invändig rengöring och ozonbehandling"
+        "Invändig biltvätt och ozonering"
       ],
       other: [
         "Nyckelkopiering",
-        "Rostlagning"
+        "Rostreparation",
+        "Dragkrokinstallationer"
       ]
     }
   }
@@ -185,7 +189,7 @@ const Index = () => {
       </div>
 
       <div 
-        className="relative h-screen bg-[url('https://lirp.cdn-website.com/7b51853d/dms3rep/multi/opt/thumb_1676498956blog-23-02-16-1920w.jpg')] bg-cover bg-center rounded-b-[50px]"
+        className="relative h-screen bg-[url('https://autoparsinta.fi/Backgnd.png')] bg-cover bg-center rounded-b-[50px]"
         style={{
           backgroundAttachment: 'fixed',
           perspective: '1px'
@@ -215,6 +219,8 @@ const Index = () => {
               </h1>
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
                 {t.principle}
+                <br />
+                045 886 3211
               </p>
               <div className="mt-8 p-4 bg-white/10 backdrop-blur-md rounded-lg inline-block">
                 <p className="text-lg">
@@ -237,7 +243,7 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ServiceCard
-              icon={<Car className="w-8 h-8" />}
+              icon={<Wrench className="w-8 h-8" />}
               items={t.services.maintenance}
               className="transform transition-all duration-500 hover:scale-105"
               style={{
@@ -247,7 +253,7 @@ const Index = () => {
               }}
             />
             <ServiceCard
-              icon={<Wrench className="w-8 h-8" />}
+              icon={<Car className="w-8 h-8" />}
               items={t.services.inspection}
               className="transform transition-all duration-500 hover:scale-105"
               style={{
@@ -257,7 +263,7 @@ const Index = () => {
               }}
             />
             <ServiceCard
-              icon={<PaintBucket className="w-8 h-8" />}
+              icon={<CircleStop className="w-8 h-8" />}
               items={t.services.cleaning}
               className="transform transition-all duration-500 hover:scale-105"
               style={{
